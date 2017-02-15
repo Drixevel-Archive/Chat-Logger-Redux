@@ -1,2 +1,2 @@
-# Chat-Logger-Redux
-Customizable chat logging based on text or RTF formatting for Sourcemod.
+# Sourcemod - Chat Logger Redux
+A Sourcemod project which allows server operators to save chat logs a variety of different ways for the Source Engine.
