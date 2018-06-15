@@ -28,10 +28,10 @@ bool IsHooked;
 public Plugin myinfo = 
 {
 	name = "[Any] Chat Logging Redux + RTF Support",
-	author = "McFlurry, Keith Warren (Drixevel)",
+	author = "McFlurry, Keith Warren (Shaders Allen)",
 	description = "Logs chat for all players and RCON information.",
 	version = PLUGIN_VERSION,
-	url = "http://www.drixevel.com/"
+	url = "http://www.shadersallen.com/"
 }
 
 public void OnPluginStart()

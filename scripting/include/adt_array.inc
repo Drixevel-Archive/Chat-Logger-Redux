@@ -78,7 +78,8 @@ methodmap ArrayList < Handle {
 	public native ArrayList Clone();
 
 	// Resizes an array.  If the size is smaller than the current size, the
-	// array is truncated.
+	// array is truncated.  If the size is larger than the current size,
+	// the data at the additional indexes will not be initialized.
 	//
 	// @param newsize       New size.
 	public native void Resize(int newsize);
@@ -211,6 +212,11 @@ methodmap ArrayList < Handle {
 	property int Length {
 		public native get();
 	}
+	
+	// Retrieve the blocksize the array was created with.
+	property int BlockSize {
+		public native get();
+	}
 };
 
 /**
@@ -252,7 +258,8 @@ native Handle CloneArray(Handle array);
 
 /**
  * Resizes an array.  If the size is smaller than the current size,
- * the array is truncated.
+ * the array is truncated.  If the size is larger than the current size,
+ * the data at the additional indexes will not be initialized.
  *
  * @param array			Array Handle.
  * @param newsize		New size.
@@ -437,3 +444,12 @@ native int FindStringInArray(Handle array, const char[] item);
  * @error				Invalid Handle or invalid block
  */
 native int FindValueInArray(Handle array, any item, int block=0);
+
+/**
+ * Returns the blocksize the array was created with.
+ *
+ * @param array			Array Handle.
+ * @return 				The blocksize of the array.
+ * @error				Invalid Handle
+ */
+native int GetArrayBlockSize(Handle array);
